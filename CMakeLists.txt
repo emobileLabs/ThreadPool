@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 2.8.9)
-
 project (threadpool)
+
+# provides install directory variables CMAKE_INSTALL_<dir>
+include (GNUInstallDirs)
+
 set(TARGET_THREADPOOL_APP threadpool_app)
 
 include_directories(BEFORE
@@ -22,5 +25,5 @@ target_link_libraries (${TARGET_THREADPOOL_APP}
   pthread
 )
 install ( TARGETS ${TARGET_THREADPOOL_APP}
-          RUNTIME DESTINATION bin)
+          RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 
